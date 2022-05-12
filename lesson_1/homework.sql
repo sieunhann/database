@@ -5,8 +5,7 @@ CREATE TABLE book(
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	title TEXT NOT NULL,
 	release_year YEAR,
-	image TEXT,
-	id_company INT
+	image TEXT
 );
 
 CREATE TABLE category(
