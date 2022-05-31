@@ -80,4 +80,3 @@ LIMIT 10;
 ```
 
 ![alt](/image/7.png)
-![alt](//final_test/image/5.png)
