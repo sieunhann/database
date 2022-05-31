@@ -9,7 +9,7 @@ INNER JOIN title_type tt ON m.id_title_type = tt.id
 WHERE tt.name LIKE 'Movie'
 GROUP BY m.id;
 ```
-![image](/image/1.png)
+![image](image/1.png)
 
 ### 2. Liệt kê các hãng phim (Bảng manufacturer) và số lượng phim thuộc hãng đó
 ```SQL
@@ -20,7 +20,7 @@ LEFT JOIN movie m ON mm.id_movie = m.id
 GROUP BY manu.id;
 ```
 
-![image](/image/2.png)
+![image](image/2.png)
 
 ### 3. Liệt kê các phim thuộc loại TV Series đã hoàn thành (current_episode = episode)
 ```SQL
@@ -30,7 +30,7 @@ INNER JOIN title_type tt ON m.id_title_type = tt.id
 WHERE tt.name LIKE 'TV Series'
 AND m.current_episode = m.episode;
 ```
-![image](/image/3.png)
+![image](image/3.png)
 
 ### 4. Liệt kê tên phim và trailer có trạng thái active của phim đó
 ``` SQL
@@ -40,7 +40,7 @@ INNER JOIN movie_trailer mt ON m.id = mt.id_movie
 INNER JOIN trailer t ON mt.id_trailer = t.id
 WHERE mt.status LIKE 'active';
 ```
-![image](/image/4.png)
+![image](image/4.png)
 
 ### 5. Liệt kê tiêu đê, mô tả, poster, độ dài và điểm imdb của các phim thuộc loại Movie và sắp xếp theo điểm imdb giảm dần
 ```SQL
@@ -48,7 +48,7 @@ SELECT title, description, poster, length, imdb
 FROM movie ORDER BY imdb DESC;
 ```
 
-![image](/image/5.png)
+![image](image/5.png)
 
 ### 6. Liệt kê tiêu đề, mô tả, poster, độ dài, thể loại (bảng genres - trả về dữ liệu dạng array), số tập và số tập đã công chiếu, của các phim thuộc loại TV mini Series, sắp xếp theo ngày công chiếu mới nhất
 ```SQL
@@ -61,7 +61,7 @@ WHERE tt.name LIKE 'TV mini Series'
 GROUP BY m.id
 ORDER BY m.release_date DESC;
 ```
-![image](/image/6.png)
+![image](image/6.png)
 
 ### 7. Liệt kê tiêu đề, mô tả, đạo diễn, biên kịch (array), poster, độ dài, thể loại (bảng genres - trả về dữ liệu dạng array), tên diễn viên (array) của các phim thuộc loại Movie của 10 bộ phim có điểm imdb cao nhất
 ```SQL
@@ -79,4 +79,4 @@ ORDER BY m.imdb DESC
 LIMIT 10;
 ```
 
-![image](/image/7.png)
+![image](image/7.png)
